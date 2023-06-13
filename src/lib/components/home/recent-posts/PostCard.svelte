@@ -7,7 +7,7 @@
 </script>  
 
 <div class="group py-[30px] px-0 flex items-center border-b border-solid border-[#E6E7E7] dark:border-[#99999926] transition-all duration-[0.4s] delay-0 ease-in-out"> 
-    <div class="flex-1 mr-[30px] overflow-hidden">
+    <div class="flex-1 mr-[30px] mb-0 overflow-hidden">
         <a href="post-single.html">
             <!--{#each post.attributes.images.data.slice(0,1) as image}
                 <img 

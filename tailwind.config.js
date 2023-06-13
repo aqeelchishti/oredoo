@@ -11,10 +11,14 @@ export default {
       'league': ['League Spartan', 'sans-serif'],
     },
     screens: {
+      'mobile-1': {'max': '321px'},
+      // => @media (max-width: 321px) { ... }
+      'mobile-0': {'max': '576px'},
+      // => @media (max-width: 576px) { ... }
       'mobile': {'max': '991px'},
-      // => @media (max-width: 639px) { ... }
+      // => @media (max-width: 991px) { ... }
       'laptop': {'min': '992px'},
-      // => @media (min-width: 1024px) { ... }
+      // => @media (min-width: 992px) { ... }
       'desktop': {'min': '1280px'}
       // => @media (min-width: 1280px) { ... }
     },
