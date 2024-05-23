@@ -1,0 +1,123 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+    @apply
+    m-0
+    p-0
+    !outline-0
+    !list-none
+}
+
+*:after,
+*:before {
+    @apply
+    box-border
+    p-0
+    m-0
+}
+
+html {
+    @apply
+    scroll-smooth
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    @apply font-league font-extrabold leading-[1.4] text-prime dark:text-white m-0 break-words
+}
+
+h1 {
+    @apply text-[40px] capitalize
+}
+
+h2 {
+    @apply text-4xl capitalize
+}
+
+h3 {
+    @apply text-[28px] capitalize
+}
+
+h4 {
+    @apply text-2xl capitalize
+}
+
+h5 {
+    @apply text-xl capitalize
+}
+
+h6 {
+    @apply text-lg capitalize
+}
+
+p:first-letter,
+h5:first-letter {
+    @apply
+    capitalize
+}
+
+article,
+aside,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+main,
+nav,
+div,
+p,
+section {
+    @apply
+    block
+}
+
+a {
+    @apply
+    bg-transparent
+    no-underline
+}
+
+img {
+    @apply
+    max-w-full
+    align-middle
+    border-none
+    h-auto
+}
+
+ul {
+    @apply
+    mb-0
+}
+
+dl,
+ol,
+ul {
+    @apply
+    mt-0
+}
+
+select {
+    @apply text-pretty
+}
+
+button, select {
+    @apply normal-case;
+}
+
+button, input, optgroup, select, textarea {
+    @apply
+    m-0
+}
+
+
+
+
+

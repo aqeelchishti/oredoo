@@ -1,7 +1,7 @@
 <script>
-    export let className='';
+	export let className = '';
 </script>
 
 <div class="flex flex-wrap -mx-[15px] {className || ''}">
-    <slot/>
+	<slot />
 </div>

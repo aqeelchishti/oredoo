@@ -1,7 +1,7 @@
 <script>
-    export let className='';
+	export let className = '';
 </script>
 
 <div class="relative grow-0 shrink-0 w-full px-[15px] {className || ''}">
-    <slot/>
+	<slot />
 </div>

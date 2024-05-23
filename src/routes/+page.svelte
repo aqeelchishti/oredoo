@@ -1,27 +1,36 @@
 <script>
-    import HeroCarousel from "$lib/components/home/hero-carousel/HeroCarousel.svelte";
-	import RecentPosts from "$lib/components/home/recent-posts/RecentPosts.svelte";
+	import HeroCarousel from '$lib/components/home/hero-carousel/HeroCarousel.svelte';
+	import HeroCover from '$lib/components/home/hero-cover/HeroCover.svelte';
+	import Categories from '$lib/components/home/categories/Categories.svelte';
+	import RecentPosts from '$lib/components/home/recent-posts/RecentPosts.svelte';
+	import SideBar from '$lib/components/home/side-bar/SideBar.svelte';
 
-    import Categories from "$lib/components/home/categories/Categories.svelte";
-
-    import Container from '$lib/components/shared/Container.svelte';
+	import Container from '$lib/components/shared/Container.svelte';
 	import Row from '$lib/components/shared/Row.svelte';
 
-    import { posts, categories } from '$lib/stores/store.js';
+	export let data;
 
-    //export let data;
+	$: posts = data.posts;
+	$: categories = data.categories;
 
+	let isHeroCarousel = false;
 </script>
 
-<HeroCarousel posts={$posts}/>
+{#if isHeroCarousel}
+	<HeroCarousel {posts} />
+{:else}
+	<HeroCover {posts} />
+{/if}
 
-<Categories categories={$categories}/>
+<button class="-left-4" on:click={() => isHeroCarousel = !isHeroCarousel}>{isHeroCarousel ? 'Layout Carousel' : 'Layout Cover'}</button>
+
+<Categories {categories} />
 
 <section class="block pt-[50px]">
-    <Container>
-        <Row>
-            <RecentPosts posts={$posts}/>
-        </Row>
-    </Container> 
+	<Container>
+		<Row>
+			<RecentPosts {posts} />
+			<SideBar {posts}/>
+		</Row>
+	</Container>
 </section>
-

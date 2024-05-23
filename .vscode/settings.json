@@ -1,0 +1,7 @@
+{
+    "terminal.integrated.cursorStyle": "underline",
+    "terminal.integrated.scrollback": 10000,
+    "terminal.integrated.cursorBlinking": true,
+    "terminal.integrated.copyOnSelection": true,
+    "terminal.integrated.cursorWidth": 2
+}
