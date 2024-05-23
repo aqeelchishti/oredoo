@@ -22,7 +22,6 @@
 		/>
 	</div>
 
-	<!--style="position: relative; overflow: visible; box-sizing: border-box; min-height: 1px;"-->
 	<Container>
 		<Row>
 			<Col className="basis-full max-w-full">
