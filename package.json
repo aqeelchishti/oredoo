@@ -51,6 +51,7 @@
 		"@splidejs/svelte-splide": "^0.2.9",
 		"@supabase/ssr": "^0.0.10",
 		"@supabase/supabase-js": "^2.39.2",
+		"@sveltejs/adapter-vercel": "^5.3.0",
 		"@tiptap/core": "^2.3.0",
 		"@tiptap/pm": "^2.3.0",
 		"@tiptap/starter-kit": "^2.1.13",
