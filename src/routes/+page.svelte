@@ -22,7 +22,15 @@
 	<HeroCover {posts} />
 {/if}
 
-<button class="-left-4" on:click={() => isHeroCarousel = !isHeroCarousel}>{isHeroCarousel ? 'Layout Carousel' : 'Layout Cover'}</button>
+<div class="px-5 py-5">
+	<p>Hero Layout:</p>
+	<div class="flex flex-row gap-2">
+		<span>Cover</span>
+		<input type="checkbox" class="toggle [--tglbg:white] bg-prime border-prime focus:ring-0" bind:checked={isHeroCarousel} />
+		<span>Carousel</span>
+	</div>
+</div>
+
 
 <Categories {categories} />
 
