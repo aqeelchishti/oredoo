@@ -69,7 +69,7 @@
 					<Col className="basis-full max-w-[100%]">
 						<div class="text-center py-[30px] px-0">
 							<p class="text-[#d0d0d0] mb-0 text-[15px]">
-								© 2024, ByteBeat, All Rights Reserved.
+								© 2024, Oredoo, All Rights Reserved.
 							</p>
 						</div>
 					</Col>
