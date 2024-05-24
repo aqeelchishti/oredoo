@@ -34,13 +34,10 @@
 				}
 			}
 		});
-
-		//const currentUser = supabase.auth.getUser().data.user;
-
+		
 		//console.log(data.session);
 		//console.log(session);
 		//console.log(supabase.auth.getUser().data.user);
-		//console.log(currentUser);
 
 		return () => subscription.unsubscribe();
 	});
