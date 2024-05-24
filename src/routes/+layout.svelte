@@ -6,7 +6,7 @@
 
 	import '$lib/styles/app.css';
 
-	// NProgress Loading bar
+	// Nprogress loading bar
 	import '$lib/styles/loading-bar.css';
 	import NProgress from 'nprogress';
 
