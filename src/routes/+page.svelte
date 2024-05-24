@@ -22,6 +22,7 @@
 	<HeroCover {posts} />
 {/if}
 
+<!-- Hero Layout Toggle -->
 <div class="px-5 py-5">
 	<p>Hero Layout:</p>
 	<div class="flex flex-row gap-2">
@@ -30,7 +31,6 @@
 		<span>Carousel</span>
 	</div>
 </div>
-
 
 <Categories {categories} />
 
