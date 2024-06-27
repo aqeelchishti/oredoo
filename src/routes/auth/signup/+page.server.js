@@ -27,18 +27,22 @@ export const actions = {
 			});
 
 			if (err) {
-				return fail(500, { message: 'Server error. Try again later.', success: false, email });
+				return fail(500, {
+					message: 'Server error. Try again later.',
+					success: false,
+					email
+				});
+			}
+			else {
+				return {
+					message: 'Please check your email for a magic link to log into the website.',
+					success: true
+				};
 			}
 
-			return {
-				message: 'Please check your email for a magic link to log into the website.',
-				success: true
-			};
 		} catch (fieldErrs) {
-			const { ...rest } = formData; 
+			const { ...rest } = formData;
 			const { fieldErrors: errors } = fieldErrs.flatten();
-
-			console.log(errors);
 
 			return fail(400, {
 				message: 'Fix form errors.',

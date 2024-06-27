@@ -3,10 +3,9 @@ import { resetPasswordFormValidationSchema } from '$lib/utils/formValidationSche
 import { AuthApiError } from '@supabase/supabase-js';
 
 export const actions = {
-	default: async ({ request, locals: { supabase, getSession } }) => {
+	default: async ({ request, locals: { supabase, session } }) => {
 		await new Promise((fulfil) => setTimeout(fulfil, 1000));
 
-		const session = await getSession();
 		const formData = Object.fromEntries(await request.formData());
 
 		try {

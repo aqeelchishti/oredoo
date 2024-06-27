@@ -79,7 +79,7 @@ importers:
         specifier: ^2.5.10
         version: 2.5.10(@sveltejs/vite-plugin-svelte@3.0.1(svelte@4.2.17)(vite@5.0.11(sass@1.75.0)))(svelte@4.2.17)(vite@5.0.11(sass@1.75.0))
       '@sveltejs/vite-plugin-svelte':
-        specifier: ^3.0.0
+        specifier: ^3.0.1
         version: 3.0.1(svelte@4.2.17)(vite@5.0.11(sass@1.75.0))
       '@tailwindcss/aspect-ratio':
         specifier: ^0.4.2
@@ -127,7 +127,7 @@ importers:
         specifier: ^1.4.0
         version: 1.4.0(svelte@4.2.17)
       svelte-check:
-        specifier: ^3.6.0
+        specifier: ^3.6.3
         version: 3.6.3(postcss-load-config@4.0.1(postcss@8.4.26))(postcss@8.4.26)(sass@1.75.0)(svelte@4.2.17)
       tailwind-scrollbar:
         specifier: ^3.1.0
@@ -136,7 +136,7 @@ importers:
         specifier: ^3.4.1
         version: 3.4.1
       vite:
-        specifier: ^5.0.3
+        specifier: ^5.0.11
         version: 5.0.11(sass@1.75.0)
       zod:
         specifier: ^3.22.4
@@ -774,8 +774,8 @@ packages:
     resolution: {integrity: sha512-QOSvevhslijgYwRx6Rv7zKdMF8lbRmx+uQGx2+vDc+KI/eBnsy9kit5aj23AgGu3pa4t9AgwbnXWqS+iOY+2aA==}
     engines: {node: '>= 6'}
 
-  caniuse-lite@1.0.30001576:
-    resolution: {integrity: sha512-ff5BdakGe2P3SQsMsiqmt1Lc8221NR1VzHj5jXN5vBny9A6fpze94HiVV/n7XRosOlsShJcvMv5mdnpjOGCEgg==}
+  caniuse-lite@1.0.30001636:
+    resolution: {integrity: sha512-bMg2vmr8XBsbL6Lr0UHXy/21m84FTxDLWn2FSqMd5PrlbMxwJlQnC2YWYxVgp66PZE+BBNF2jYQUBKCo1FDeZg==}
 
   case-anything@2.1.13:
     resolution: {integrity: sha512-zlOQ80VrQ2Ue+ymH5OuM/DlDq64mEm+B9UTdHULv5osUMD6HalNTblf2b1u/m6QecjsnOkBpqVZ+XPwIVsy7Ng==}
@@ -2450,7 +2450,7 @@ snapshots:
   autoprefixer@10.4.14(postcss@8.4.26):
     dependencies:
       browserslist: 4.21.9
-      caniuse-lite: 1.0.30001576
+      caniuse-lite: 1.0.30001636
       fraction.js: 4.2.0
       normalize-range: 0.1.2
       picocolors: 1.0.0
@@ -2480,7 +2480,7 @@ snapshots:
 
   browserslist@4.21.9:
     dependencies:
-      caniuse-lite: 1.0.30001576
+      caniuse-lite: 1.0.30001636
       electron-to-chromium: 1.4.460
       node-releases: 2.0.13
       update-browserslist-db: 1.0.11(browserslist@4.21.9)
@@ -2491,7 +2491,7 @@ snapshots:
 
   camelcase-css@2.0.1: {}
 
-  caniuse-lite@1.0.30001576: {}
+  caniuse-lite@1.0.30001636: {}
 
   case-anything@2.1.13: {}
 

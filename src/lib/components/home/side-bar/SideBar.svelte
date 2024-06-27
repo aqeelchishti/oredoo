@@ -20,7 +20,7 @@
                     <form class="flex items-center" action="">
                         <input class="w-full py-[15px] pr-5 pl-[10px] border border-[#E6E7E7] dark:border-[#99999926] focus:ring-0 focus:border-[#E6E7E7] dark:focus:border-[#99999926]" type="search" id="gsearch" name="gsearch" placeholder="Search ....">
                         <a href="search.html" class="block w-[35px] h-[35px] text-center rounded-none -ml-[45px] bg-prime dark:bg-white">
-                            <Icon icon={searchIcon} class="leading-[35px] font-[900] text-white dark:text-prime" />
+                            <Icon icon={searchIcon} class="leading-[35px] font-[900] text-white dark:text-prime justify-center align-middle" />
                         </a>
                     </form>
                 </div>
@@ -43,7 +43,7 @@
                             </div>
                             <div class="small-post-content">
                                 <p>
-                                    <a href="post-single.html">Everything is designed. Few things are designed well.</a>
+                                    <!--<a href="post-single.html">Everything is designed. Few things are designed well.</a>-->
                                 </p>
                                 <small> <span class="slash"></span>3 mounth ago</small>
                             </div>
@@ -52,7 +52,7 @@
                 </ul>
             </div>
 
-            <!--newslatter-->
+            <!--newslatter->
             <div class="widget widget-newsletter">
                 <h5>Subscribe To Our Newsletter</h5>
                 <p>No spam, notifications only about new products, updates.</p>
@@ -65,6 +65,7 @@
                     </div>
                 </form>
             </div>
+            -->
 
             <!--stay connected
             <div class="widget ">

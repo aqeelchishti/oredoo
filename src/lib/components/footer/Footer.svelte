@@ -55,9 +55,11 @@
 					</Col>
 					<!--/-->
 					<Menu title="Follow us">
+						<!--
 						<MenuItem name="Facebook" link="/" />
 						<MenuItem name="Instagram" link="/" />
 						<MenuItem name="Youtube" link="/" />
+						-->
 					</Menu>
 				</Row>
 			</Container>

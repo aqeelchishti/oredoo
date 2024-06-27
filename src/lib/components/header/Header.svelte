@@ -59,7 +59,7 @@
 
 				{#if !data_session}
 					<!--button-get-started-->
-					<LinkButton link="auth/signup" btnClass="px-[20px] py-[0px] text-[15px] leading-[38px]"
+					<LinkButton link="/auth/signup" btnClass="px-[20px] py-[0px] text-[15px] leading-[38px]"
 						>Get Started</LinkButton
 					>
 				{:else}

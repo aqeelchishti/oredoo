@@ -1,5 +1,4 @@
 <script>
-	//import EmailConfirmMessageBar from '$lib/components/header/EmailConfirmMessageBar.svelte';
 	import Header from '$lib/components/header/Header.svelte';
 	import Footer from '$lib/components/footer/Footer.svelte';
 	import Loading from '$lib/components/shared/Loading.svelte';
@@ -10,36 +9,28 @@
 	import '$lib/styles/loading-bar.css';
 	import NProgress from 'nprogress';
 
-	import { navigating } from '$app/stores';
-
 	import { classList } from 'svelte-body';
-	import { invalidate } from '$app/navigation';
-	import { onMount } from 'svelte';
-	import { redirect } from '@sveltejs/kit';
-	
-	export let data;
 
-	let { supabase, session } = data;
-	$: ({ supabase, session } = data);
+	import { navigating } from '$app/stores';
+	import { goto, invalidate } from '$app/navigation';
+	import { onMount } from 'svelte';
+
+	export let data;
+	$: ({ session, supabase } = data);
 
 	onMount(() => {
-		const {
-			data: { subscription }
-		} = supabase.auth.onAuthStateChange((event, _session) => {
-			if (event === 'PASSWORD_RECOVERY') {
-				throw redirect(302, '/auth/callback?next=/auth/reset_password');
-			} else {
-				if (_session?.expires_at !== session?.expires_at) {
-					invalidate('supabase:auth');
-				}
+		const { data } = supabase.auth.onAuthStateChange((_, newSession) => {
+			if (!newSession) {
+				setTimeout(() => {
+					goto('/', { invalidateAll: true });
+				});
+			}
+			if (newSession?.expires_at !== session?.expires_at) {
+				invalidate('supabase:auth');
 			}
 		});
 		
-		//console.log(data.session);
-		//console.log(session);
-		//console.log(supabase.auth.getUser().data.user);
-
-		return () => subscription.unsubscribe();
+		return () => data.subscription.unsubscribe();
 	});
 
 	NProgress.configure({
@@ -101,3 +92,5 @@
 <slot />
 
 <Footer />
+
+<div class="overflow-x"></div>

@@ -24,8 +24,6 @@
 
 	let loading = false;
 
-	console.log(form);
-
 	/*const { form, enhance, errors, delayed, message } = superForm(data.form, {
 		//resetForm: true,
 		validators: signupFormValidationSchema
@@ -137,9 +135,9 @@
 								type="password"
 								placeholder="Password*"
 								name="password"
-								className={form?.errors?.password
+								className="{form?.errors?.password
 									? 'border-red-500 focus:border-red-500'
-									: 'border-[#E6E7E7] dark:border-[#99999926] focus:border-prime dark:focus:border-white'}
+									: 'border-[#E6E7E7] dark:border-[#99999926] focus:border-prime dark:focus:border-white'}"
 							/>
 							{#if form?.errors?.password}
 								<FieldError>{form?.errors?.password[0]}</FieldError>

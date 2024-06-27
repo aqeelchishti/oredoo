@@ -1,11 +1,10 @@
-//import { redirect } from '@sveltejs/kit';
+import { redirect } from '@sveltejs/kit';
 
-export const load = async (/*{ locals: { getSession } }*/) => {
-	/*
-	const session = await getSession();
+export const load = async ({ locals: { safeGetSession } }) => {
+	//const next = url.searchParams.get('next') ?? '/new-post';
+	const { session, user } = await safeGetSession();
 
-	if (!session) {
-		throw redirect(302, '/auth/login');
+	if (!session && !user) {
+		redirect(307, `/auth/login`);
 	}
-	*/
 };

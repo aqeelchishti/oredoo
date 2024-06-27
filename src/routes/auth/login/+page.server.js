@@ -1,4 +1,4 @@
-import { fail, redirect } from '@sveltejs/kit';
+import { fail } from '@sveltejs/kit';
 import { loginFormValidationSchema } from '$lib/utils/formValidationSchema.js';
 import { AuthApiError } from '@supabase/supabase-js';
 
@@ -22,12 +22,22 @@ export const actions = {
 				}
 				return fail(500, { message: 'Server error. Try again later.', success: false, email });
 			}
+			else {
+				return {
+					message: 'Successfully Logged In.',
+					success: true
+				};
+			}
+			/*
+			else {
+				return redirect(303, '/');
+			}
+			*/
 
-			throw redirect(303, '/');
 		} catch (fieldErrs) {
 			const { ...rest } = formData;
-			//const { fieldErrors: errors } = fieldErrs.flatten();
-			const { fieldErrors: errors } = fieldErrs;
+			const { fieldErrors: errors } = fieldErrs.flatten();
+			//const { fieldErrors: errors } = fieldErrs;
 
 			console.log(errors);
 

@@ -14,13 +14,12 @@
     $: console.log(posts);
     $: console.log(post);
 </script>
-
-<section class="group relative overflow-hidden bg-[#F1F1F1] dark:bg-[#1B1B1B] h-[645px] mt-[85px] mb-0 p-0">
-        <div class="absolute bg-cover bg-center right-0 top-0 bottom-0 left-auto w-[50%] h-[645px] overflow-hidden p-[50px] z-[2]" style="background-image: url({post.image_url})"> </div>
+<section class="group relative overflow-hidden bg-[#F1F1F1] dark:bg-[#1B1B1B] h-[645px] mobile:h-auto mt-[85px] mb-0 p-0 right-0">
+        <div class="absolute bg-cover bg-center right-0 top-0 bottom-0 left-auto w-[50%] h-[645px] overflow-hidden p-[50px] z-[2] mobile:relative mobile:w-full mobile:h-[600px]" style="background-image: url({post.image_url})"></div>
         <Container>
-            <div class="flex items-center h-[645px] z-[9999]">
+            <div class="flex items-center h-[645px] z-[9999] mobile:h-auto mobile:py-[50px] mobile:px-[0px]">
                 <Row>
-                    <Col className="max-w-[50%] basis-1/2">
+                    <Col className="max-w-[50%] basis-1/2 mobile:max-w-full mobile:basis-full">
                         <div>
                             <h2 class="leading-[1.4]">
                                 <a class="bg-size-0-5 group-hover:bg-size-100-5 bg-origin-border bg-left-bottom bg-no-repeat inline text-prime dark:text-white bg-gradient-to-r from-prime dark:from-white from-0% to-prime dark:to-white to-100% transition-[background-size] delay-0 duration-[0.5s] ease-in-out" href={`/posts/${post.slug}`}>{post.title}</a>

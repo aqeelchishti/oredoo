@@ -17,10 +17,10 @@
 			link: '',
 			subMenu: true,
 			menuList: [
-				{ id: 0, name: 'Design', link: '/design' },
-				{ id: 1, name: 'Technology', link: '/technology' },
-				{ id: 2, name: 'Fitness', link: '/fitness' },
-				{ id: 3, name: 'Branding', link: '/branding' }
+				{ id: 0, name: 'Design', link: '/category/design' },
+				{ id: 1, name: 'Technology', link: '/category/technology' },
+				{ id: 2, name: 'Fitness', link: '/category/fitness' },
+				{ id: 3, name: 'Branding', link: '/category/branding' }
 			]
 		},
 		/*{
@@ -45,7 +45,7 @@
 			]
 		},
 		{ id: 4, name: 'Contact', link: '/contact' },
-		/*{ id: 5, name: 'Sign Up', link: '/auth/signup' },*/
+		{ id: 5, name: 'Sign Up', link: '/auth/signup' },
 		{ id: 6, name: 'New Post', link: '/new-post' }
 	]);
 
@@ -73,7 +73,7 @@
 								transition:fly={{ y: 28, duration: 200 }}
 								class="bg-white dark:bg-[#101213] rounded-none p-5 absolute text-[#212529] text-left bg-clip-padding left-0 z-[1000] min-w-[10rem] mb-0 mx-0 text-base border border-solid border-[#E6E7E7] dark:border-[#99999926] float-none mobile:top-[100%] {$showMenu
 									? 'block visible opacity-100'
-									: 'hidden invisible opacity-0'} mobile:hidden transition-all duration-[0.3s] delay-0 ease mobile:mt-[0.125rem] mt-2.5"
+									: 'hidden invisible opacity-0'} mobile:hidden transition-all duration-[0.3s] delay-0 ease mobile:mt-[0.125rem]"
 							>
 								{#each selectedMenu?.menuList as item}
 									<SubMenu name={item.name} link={item.link} />

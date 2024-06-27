@@ -12,7 +12,7 @@
 	<Container>
 		<div class="py-[50px] px-0 border-b border-solid border-[#E6E7E7] dark:border-[#99999926]">
 			<Row>
-				<Col className="max-w-full basis-full mobile:basis-0">
+				<Col className="laptop:max-w-full laptop:basis-full">
 					<div class="grid grid-cols-10 mobile:grid-cols-5 grid-rows-[auto] gap-[10px]">
 						{#each categories as category}
 							<CategoryCard {category} />
