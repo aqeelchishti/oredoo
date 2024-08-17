@@ -6,26 +6,26 @@ export const load = async ({ fetch, data, depends }) => {
 
 	const supabase = isBrowser()
 		? createBrowserClient(PUBLIC_SUPABASE_URL, PUBLIC_SUPABASE_ANON_KEY, {
-			global: {
-				fetch
-			},
-			cookies: {
-				get(key) {
-					const cookie = parse(document.cookie);
-					return cookie[key];
+				global: {
+					fetch
+				},
+				cookies: {
+					get(key) {
+						const cookie = parse(document.cookie);
+						return cookie[key];
+					}
 				}
-			}
-		})
+			})
 		: createServerClient(PUBLIC_SUPABASE_URL, PUBLIC_SUPABASE_ANON_KEY, {
-			global: {
-				fetch
-			},
-			cookies: {
-				get() {
-					return JSON.stringify(data.session);
+				global: {
+					fetch
+				},
+				cookies: {
+					get() {
+						return JSON.stringify(data.session);
+					}
 				}
-			}
-		});
+			});
 
 	const {
 		data: { session }
