@@ -1,3 +1,5 @@
+const { addIconSelectors } = require('@iconify/tailwind');
+
 /** @type {import('tailwindcss').Config} */
 export default {
 	darkMode: 'class',
@@ -57,6 +59,7 @@ export default {
 		require('tailwind-scrollbar')({ nocompatible: true }),
 		//require('tailwind-scrollbar'),
 		require('flowbite/plugin'),
-		require('daisyui')
+		require('daisyui'),
+		addIconSelectors(['la'])
 	]
 };

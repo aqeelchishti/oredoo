@@ -13,24 +13,29 @@
 	$: posts = data.posts;
 	$: categories = data.categories;
 
-	let isHeroCarousel = false;
+	//let isHeroCarousel = false;
 </script>
 
-{#if isHeroCarousel}
+<!--{#if isHeroCarousel}
 	<HeroCarousel {posts} />
-{:else}
-	<HeroCover {posts} />
-{/if}
+{:else}-->
+<HeroCover {posts} />
+<!--{/if}-->
 
-<!-- Hero Layout Toggle -->
+<!-- Hero Layout Toggle 
 <div class="px-5 py-5">
 	<p>Hero Layout:</p>
 	<div class="flex flex-row gap-2">
 		<span>Cover</span>
-		<input type="checkbox" class="toggle [--tglbg:white] bg-prime border-prime focus:ring-0" bind:checked={isHeroCarousel} />
+		<input
+			type="checkbox"
+			class="toggle [--tglbg:white] bg-prime border-prime focus:ring-0"
+			bind:checked={isHeroCarousel}
+		/>
 		<span>Carousel</span>
 	</div>
 </div>
+-->
 
 <Categories {categories} />
 
@@ -38,7 +43,7 @@
 	<Container>
 		<Row>
 			<RecentPosts {posts} />
-			<SideBar {posts}/>
+			<SideBar {posts} />
 		</Row>
 	</Container>
 </section>

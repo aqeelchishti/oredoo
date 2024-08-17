@@ -115,9 +115,8 @@
 						</div>
 						<div class="mb-4">
 							<Button
-								btnClass="w-full my-[10px] px-[24px] py-[8px] text-[16px] leading-[24px]"
 								disabled={loading ? true : false}
-								busy={loading}
+								btnClass="w-full my-[10px] px-[24px] py-[8px] text-[16px] leading-[24px] disabled:opacity-50 disabled:cursor-not-allowed"
 							>
 								{#if loading}
 									Logging In <span class="ml-4 loading loading-dots loading-md" />

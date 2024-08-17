@@ -60,12 +60,15 @@ importers:
       '@iconify/icons-ri':
         specifier: ^1.2.10
         version: 1.2.10
+      '@iconify/json':
+        specifier: ^2.2.237
+        version: 2.2.237
       '@iconify/svelte':
         specifier: ^3.1.4
         version: 3.1.4(svelte@4.2.17)
       '@iconify/tailwind':
-        specifier: ^0.1.4
-        version: 0.1.4
+        specifier: ^1.1.2
+        version: 1.1.2
       '@playwright/test':
         specifier: ^1.40.1
         version: 1.40.1
@@ -335,13 +338,16 @@ packages:
   '@iconify/icons-ri@1.2.10':
     resolution: {integrity: sha512-w/Xu177artcK7P1LPUMq85WcRbqFE8sKYQEuNfEkuex/47DOaCgW6oBFdjlFBAmBczKlsJPdcy2pAGBGZvXdYw==}
 
+  '@iconify/json@2.2.237':
+    resolution: {integrity: sha512-lMK5I9JX90L2LR18Lz6C5XrivxxAGejdJvFQI7TQkj03WcaxRJlciPbQb6z4nX+DS1T6k591ZQ2/hyRVbjqrgA==}
+
   '@iconify/svelte@3.1.4':
     resolution: {integrity: sha512-YDwQlN46ka8KPRayDb7TivmkAPizfTXi6BSRNqa1IV0+byA907n8JcgQafA7FD//pW5XCuuAhVx6uRbKTo+CfA==}
     peerDependencies:
       svelte: '*'
 
-  '@iconify/tailwind@0.1.4':
-    resolution: {integrity: sha512-U7RzcU2fkwOfMDsGQ3mtpLIaApSnqb+vgcJJknPPbg8/NF5s7tI1o5otEMfcpnLGk4PbYB8bxmKTz7IJVUlU2Q==}
+  '@iconify/tailwind@1.1.2':
+    resolution: {integrity: sha512-ZgToKxxd7zF5T9NXPnY9APRF06ZjFF21H/bINzcbKTdeJzLrNLIoVaoePIUbWVQ2HAac5cAYEHPZO8ILSUe3bQ==}
 
   '@iconify/types@2.0.0':
     resolution: {integrity: sha512-+wluvCrRhXrhyOmRDJ3q8mux9JkKy5SJ/v8ol2tu4FVjyYvtEzkc/3pK15ET6RKg4b4w4BmTk1+gsCUhf21Ykg==}
@@ -1353,6 +1359,9 @@ packages:
   path-parse@1.0.7:
     resolution: {integrity: sha512-LDJzPVEEEPR+y48z93A0Ed0yXb8pAByGWo/k5YYdYgpY2/2EsOsksJrq7lOHxryrVOn1ejG6oAp8ahvOIQD8sw==}
 
+  pathe@1.1.2:
+    resolution: {integrity: sha512-whLdWMYL2TwI08hn8/ZqAbrVemu0LNaNNJZX73O6qaIdCTfXutsLhMkjdENX0qhsQ9uIimo4/aQOmXkoon2nDQ==}
+
   periscopic@3.1.0:
     resolution: {integrity: sha512-vKiQ8RRtkl9P+r/+oefh25C3fhybptkHKCZSPlcXiJux2tJF55GnEj3BVn4A5gKfq9NWWXXrxkHBwVPUfH0opw==}
 
@@ -2020,12 +2029,17 @@ snapshots:
     dependencies:
       '@iconify/types': 2.0.0
 
+  '@iconify/json@2.2.237':
+    dependencies:
+      '@iconify/types': 2.0.0
+      pathe: 1.1.2
+
   '@iconify/svelte@3.1.4(svelte@4.2.17)':
     dependencies:
       '@iconify/types': 2.0.0
       svelte: 4.2.17
 
-  '@iconify/tailwind@0.1.4':
+  '@iconify/tailwind@1.1.2':
     dependencies:
       '@iconify/types': 2.0.0
 
@@ -3068,6 +3082,8 @@ snapshots:
   path-key@3.1.1: {}
 
   path-parse@1.0.7: {}
+
+  pathe@1.1.2: {}
 
   periscopic@3.1.0:
     dependencies:

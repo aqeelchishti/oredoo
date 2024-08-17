@@ -8,4 +8,3 @@ export const load = async ({ locals: { safeGetSession } }) => {
 		redirect(307, '/');
 	}
 };
-

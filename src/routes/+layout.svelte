@@ -1,7 +1,7 @@
 <script>
 	import Header from '$lib/components/header/Header.svelte';
 	import Footer from '$lib/components/footer/Footer.svelte';
-	import Loading from '$lib/components/shared/Loading.svelte';
+	import Loader from '$lib/components/shared/Loader.svelte';
 
 	import '$lib/styles/app.css';
 
@@ -29,7 +29,7 @@
 				invalidate('supabase:auth');
 			}
 		});
-		
+
 		return () => data.subscription.unsubscribe();
 	});
 
@@ -53,7 +53,7 @@
 
 	onMount(() => {
 		isPageLoaded = true;
-	})
+	});
 </script>
 
 <svelte:head>
@@ -83,14 +83,12 @@
 />
 
 <!--Loading-->
-{#if !isPageLoaded}
-	<Loading />
+{#if !isPageLoaded && $navigating}
+	<Loader />
 {/if}
 
-<Header className={'top-0'} data_session={data.session}/>
+<Header dataSession={data.session} />
 
 <slot />
 
 <Footer />
-
-<div class="overflow-x"></div>

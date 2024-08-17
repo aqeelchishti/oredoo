@@ -4,6 +4,6 @@ export const load = async ({ locals: { safeGetSession } }) => {
 	const { session, user } = await safeGetSession();
 
 	if (!session && !user) {
-		redirect(307, `/auth/login`);
+		redirect(307, `/auth/login?next=/new-post`);
 	}
 };

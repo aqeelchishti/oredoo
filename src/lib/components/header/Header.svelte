@@ -4,15 +4,7 @@
 	import Nav from '$lib/components/header/nav/Nav.svelte';
 
 	import Button from '$lib/components/shared/buttons/Button.svelte';
-	import LinkButton from '$lib/components/shared/buttons/LinkButton.svelte';
 	import IconButton from '$lib/components/shared/buttons/IconButton.svelte';
-
-	import ThemeSwitch from '$lib/components/header/ThemeSwitch.svelte';
-
-	import sunIcon from '@iconify/icons-la/sun';
-	import moonIcon from '@iconify/icons-la/moon';
-	import searchIcon from '@iconify/icons-la/search';
-	import barsIcon from '@iconify/icons-la/bars';
 
 	import { slide } from 'svelte/transition';
 	import { enhance } from '$app/forms';
@@ -20,13 +12,23 @@
 	import oredooLogoDark from '$lib/assets/images/logo-dark.png';
 	import oredooLogoLight from '$lib/assets/images/logo-light.png';
 
+	export let className, dataSession;
+
 	let isOpenMobileNav = false;
 
-	export let className, data_session;
+	let isDark = false;
+
+	function handleToggleTheme() {
+		isDark = !isDark;
+
+		isDark
+			? document.documentElement.classList.add('dark')
+			: document.documentElement.classList.remove('dark');
+	}
 </script>
 
 <header
-	class="h-[85px] bg-white dark:bg-[#101213] border-b border-solid border-[#E6E7E7] dark:border-[#99999926] fixed right-0 left-0 z-[1030] block flex-row flex-nowrap justify-start mobile:flex-col mobile:flex-wrap mobile:justify-center {className ||
+	class="h-[85px] bg-white top-0 dark:bg-[#101213] border-b border-solid border-[#E6E7E7] dark:border-[#99999926] fixed right-0 left-0 z-[1030] block flex-row flex-nowrap justify-start mobile:flex-col mobile:flex-wrap mobile:justify-center {className ||
 		''}"
 >
 	<Container>
@@ -40,45 +42,30 @@
 			>
 				<Nav />
 			</div>
-			<!--header-right-->
-			<div class="items-center flex ml-auto">
-				<!--theme-switch-->
-				<ThemeSwitch
-					iconLight={moonIcon}
-					iconDark={sunIcon}
-					iconClass="text-prime dark:text-white bg-transparent w-[20px] h-[20px] text-xl leading-[20px]"
-					btnClass="w-[35px] h-[35px] p-[8px] inline-block text-center cursor-pointer"
-				/>
+			<div class="flex items-center gap-3 ml-auto">
+				<!--theme-switcher-->
+				<IconButton on:click={handleToggleTheme} icon={isDark === true ? 'la--moon' : 'la--sun'} />
 
 				<!--search-icon-->
-				<IconButton
-					icon={searchIcon}
-					iconClass="text-xl leading-[35px] text-prime dark:text-white"
-					btnClass="w-[35px] h-[35px] rounded-[20px] mx-[10px] p-[8px] text-center inline-block cursor-pointer text-prime transition-all delay-0 ease-in-out"
-				/>
+				<IconButton icon="la--search" iconClass="text-xl" />
 
-				{#if !data_session}
+				{#if !dataSession}
 					<!--button-get-started-->
-					<LinkButton link="/auth/signup" btnClass="px-[20px] py-[0px] text-[15px] leading-[38px]"
-						>Get Started</LinkButton
-					>
+					<Button isButtonLink={true} btnLink="/auth/signup">Get Started</Button>
 				{:else}
 					<!--button-logout-->
 					<form action="/logout" method="POST" use:enhance>
-						<Button btnType="submit" btnClass="px-[20px] py-[0px] text-[15px] leading-[38px]"
-							>Logout</Button
-						>
+						<Button btnType="submit" btnLink="/auth/signup">Logout</Button>
 					</form>
 				{/if}
 			</div>
-			<!--navbar-toggler-->
+			<!--mobile-navbar-toggler-->
 			<IconButton
 				on:click={() => (isOpenMobileNav = !isOpenMobileNav)}
-				icon={barsIcon}
+				icon="la--bars"
 				iconClass="text-xl leading-[35px] text-prime dark:text-white"
 				btnClass="relative w-[35px] h-[35px] ml-[15px] p-[7px] hidden text-center mobile:inline-block cursor-pointer text-prime"
 			/>
-			<!--/-->
 		</div>
 	</Container>
 </header>

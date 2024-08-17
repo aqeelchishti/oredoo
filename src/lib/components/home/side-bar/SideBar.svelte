@@ -1,58 +1,81 @@
 <script>
 	import Col from '$lib/components/shared/Col.svelte';
-    
-    import Icon from '@iconify/svelte';
 
-    import searchIcon from '@iconify/icons-la/search';
+	import IconButton from '$lib/components/shared/buttons/IconButton.svelte';
 
-    export let posts;
+	export let posts;
 </script>
 
 <Col className="basis-1/3 max-w-[33.333333%] relative overflow-visible box-border min-h-[1px]">
-    <div class="py-0 static transform-none top-0 after:content-[''] after:table after:clear-both">
-        <div class="pb-[30px] pl-[30px] border-l border-solid border-[#E6E7E7] dark:border-[#99999926]">
-            <!--search-->
-            <div class="py-[30px] px-0 border-b border-[#E6E7E7] dark:border-[#99999926]">
-                <div class="mb-5">
-                    <h5 class="capitalize font-extrabold">Search</h5>
-                </div>
-                <div>
-                    <form class="flex items-center" action="">
-                        <input class="w-full py-[15px] pr-5 pl-[10px] border border-[#E6E7E7] dark:border-[#99999926] focus:ring-0 focus:border-[#E6E7E7] dark:focus:border-[#99999926]" type="search" id="gsearch" name="gsearch" placeholder="Search ....">
-                        <a href="search.html" class="block w-[35px] h-[35px] text-center rounded-none -ml-[45px] bg-prime dark:bg-white">
-                            <Icon icon={searchIcon} class="leading-[35px] font-[900] text-white dark:text-prime justify-center align-middle" />
-                        </a>
-                    </form>
-                </div>
-            </div>
+	<div class="py-0 static transform-none top-0 after:content-[''] after:table after:clear-both">
+		<div class="pb-[30px] pl-[30px] border-l border-solid border-[#E6E7E7] dark:border-[#99999926]">
+			<!--search-->
+			<div class="py-[30px] px-0 border-b border-[#E6E7E7] dark:border-[#99999926]">
+				<div class="mb-5">
+					<h5 class="capitalize font-extrabold">Search</h5>
+				</div>
+				<div>
+					<form class="flex items-center" action="">
+						<input
+							class="w-full py-[15px] pr-5 pl-[10px] dark:bg-[#101213] border border-[#E6E7E7] dark:border-[#99999926] focus:ring-0 focus:border-[#E6E7E7] dark:focus:border-[#99999926]"
+							type="search"
+							id="gsearch"
+							name="gsearch"
+							placeholder="Search ...."
+						/>
+						<IconButton
+							icon="la--search"
+							btnClass="flex justify-center text-center rounded-none -ml-[45px] bg-prime dark:bg-white"
+							iconClass="!text-white dark:!text-prime !size-[18px] dark:!size-[18px]"
+						/>
+					</form>
+				</div>
+			</div>
 
-            <!--popular-posts-->
-            <div class="py-[30px] px-0 border-b border-[#E6E7E7] dark:border-[#99999926]">
-                <div class="mb-5">
-                    <h5 class="capitalize font-extrabold">Popular Articles</h5>
-                </div>
-            
-                <ul class="widget-popular-posts">
-                    {#each posts as post}
-                        <li class="small-post">
-                            <div class="small-post-image">
-                                <a href="post-single.html">
-                                    <img src="assets/img/blog/1.jpg" alt="">
-                                    <small class="nb">1</small>
-                                </a>
-                            </div>
-                            <div class="small-post-content">
-                                <p>
-                                    <!--<a href="post-single.html">Everything is designed. Few things are designed well.</a>-->
-                                </p>
-                                <small> <span class="slash"></span>3 mounth ago</small>
-                            </div>
-                        </li>
-                    {/each}
-                </ul>
-            </div>
+			<!--popular-posts-->
+			<!-- border-b border-[#E6E7E7] dark:border-[#99999926] -->
+			<div class="py-[30px] px-0">
+				<div class="mb-5">
+					<h5 class="capitalize font-extrabold">Popular Articles</h5>
+				</div>
 
-            <!--newslatter->
+				<ul class="flex flex-col gap-[30px] my-0">
+					{#each posts as post}
+						<li
+							class="group relative flex flex-row gap-[15px] items-center transition-all duration-[0.5s] ease-in-out"
+						>
+							<div class="overflow-hidden w-[80px]">
+								<a href={`/posts/${post.slug}`}>
+									<img
+										src={post.image_url}
+										class="size-[80px] object-cover object-center group-hover:scale-[1.2] rounded-none transition-all duration-[0.5s] ease-in-out"
+										alt=""
+									/>
+									<!--<small class="nb">1</small>-->
+								</a>
+							</div>
+							<div class="flex flex-col gap-[5px] w-[calc(100%-80px)]">
+								<p class="text-[17px] font-league font-extrabold inline text-prime dark:text-white">
+									<a
+										href={`/posts/${post.slug}`}
+										class="bg-size-0-5 group-hover:bg-size-100-5 bg-origin-border bg-left-bottom bg-no-repeat bg-gradient-to-r from-prime from-0% to-prime to-100% dark:from-white dark:to-white transition-[background-size] delay-0 duration-[0.5s] ease-in-out"
+										>{post.title}</a
+									>
+								</p>
+								<small
+									class="flex items-center capitalize text-xs text-primeTarns dark:text-central font-semibold"
+								>
+									<span
+										class="inline-block w-[18px] h-[1px] bg-primeTarns dark:bg-central !my-[4px] !mx-[10px]"
+									/>3 mounth ago</small
+								>
+							</div>
+						</li>
+					{/each}
+				</ul>
+			</div>
+
+			<!--newslatter->
             <div class="widget widget-newsletter">
                 <h5>Subscribe To Our Newsletter</h5>
                 <p>No spam, notifications only about new products, updates.</p>
@@ -67,7 +90,7 @@
             </div>
             -->
 
-            <!--stay connected
+			<!--stay connected
             <div class="widget ">
                 <div class="widget-title">
                     <h5>Stay connected</h5>
@@ -108,13 +131,13 @@
                 </div>
             </div>
             -->
-            
-            <!--Ads
+
+			<!--Ads
             <div class="widget pb-0">
                 <div class="widget-ads">
                     <img src="assets/img/ads/ads2.jpg" alt="">
                 </div>
             </div>-->
-        </div>
-    </div>
+		</div>
+	</div>
 </Col>

@@ -3,7 +3,7 @@
 	import Row from '$lib/components/shared/Row.svelte';
 	import Col from '$lib/components/shared/Col.svelte';
 
-	import IconButton from '$lib/components/shared/buttons/IconButton.svelte';
+	//import IconButton from '$lib/components/shared/buttons/IconButton.svelte';
 
 	import Menu from '$lib/components/footer/Menu.svelte';
 	import MenuItem from '$lib/components/footer/MenuItem.svelte';
@@ -44,11 +44,11 @@
 											required="required"
 										/>
 									</div>
-									<IconButton
+									<!--<IconButton
 										icon={paperPlane}
 										iconClass="text-[13px] leading-[35px] text-white antialiased inline-block mb-[2px]"
 										btnClass="absolute bg-[#1B1B1B] w-[35px] h-[35px] rounded-none font-normal mt-0 mr-[5px] border-0 cursor-pointer overflow-visible transition-all duration-[0.7s] delay-0 ease-in-out"
-									/>
+									/>-->
 								</div>
 							</form>
 						</div>
@@ -70,9 +70,7 @@
 				<Row>
 					<Col className="basis-full max-w-[100%]">
 						<div class="text-center py-[30px] px-0">
-							<p class="text-[#d0d0d0] mb-0 text-[15px]">
-								© 2024, Oredoo, All Rights Reserved.
-							</p>
+							<p class="text-[#d0d0d0] mb-0 text-[15px]">© 2024, Oredoo, All Rights Reserved.</p>
 						</div>
 					</Col>
 				</Row>

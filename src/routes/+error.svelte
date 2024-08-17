@@ -3,7 +3,7 @@
 	import Row from '$lib/components/shared/Row.svelte';
 	import Col from '$lib/components/shared/Col.svelte';
 
-	import LinkButton from '$lib/components/shared/buttons/LinkButton.svelte';
+	import Button from '$lib/components/shared/buttons/Button.svelte';
 
 	import { page } from '$app/stores';
 </script>
@@ -15,8 +15,10 @@
 				<div class="py-[50px] px-0 text-center">
 					<h3>Oops... {$page.status}!</h3>
 					<p class="mt-5 mb-[30px]">{$page.error.message}</p>
-					<LinkButton link="/" btnClass="px-[24px] py-[8px] text-[16px] leading-[24px]"
-						>Back to homepage</LinkButton
+					<Button
+						isButtonLink={true}
+						btnLink="/"
+						btnClass="px-[24px] py-[8px] text-[16px] leading-[24px]">Back to homepage</Button
 					>
 				</div>
 			</Col>
